@@ -1,4 +1,14 @@
 #include "order.h"
+    
+Order::Order()
+{
+    this->timestamp = std::chrono::system_clock::now();
+}
+
+Order::~Order()
+{
+    // destructor
+}
 
 inline bool operator< (const Order& lhs, const Order& rhs)
 {
@@ -17,4 +27,9 @@ inline bool operator> (const Order& lhs, const Order& rhs)
     else {
         return std::tie(lhs.priority) > std::tie(rhs.priority);
     }
+}
+	
+inline uint32_t is_ask(side_t side)
+{ 
+	return side; 
 }

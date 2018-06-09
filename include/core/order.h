@@ -1,15 +1,17 @@
 #include "stdafx.h"
+#include "types.h"
 
 class Order
 {
 public:
-    Order(){
-        this->timestamp = std::chrono::system_clock::now();
-    }
-    ~Order(){
-    }
+    // constructor
+    Order();
+    // destructor
+    ~Order();
+    // order id 
+    orderid_t orderid;
 	// is it the side to buy or sell
-    uint32_t side;
+    uint32_t is_ask(side_t side);
 	// is it the quanity
     uint64_t quantity;
 	// the price

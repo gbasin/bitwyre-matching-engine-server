@@ -5,7 +5,8 @@ find_package(Boost)
 find_package(RapidJSON)
 find_package(cpprestsdk REQUIRED NAMES cpprestsdk cpprest)
 
-include_directories(include)
+include_directories(include/core)
+include_directories(include/fixpp)
 include_directories(${Boost_INCLUDE_DIRS})
 
 file(GLOB SOURCES "src/cpp/*.cpp")

@@ -8,7 +8,12 @@ find_package(cpprestsdk REQUIRED NAMES cpprestsdk cpprest)
 include_directories(include)
 include_directories(${Boost_INCLUDE_DIRS})
 
-file(GLOB SOURCES "src/cpp/*.cpp")
+file(GLOB CLIENT_SOURCES "src/cpp/client.cpp")
 
-add_executable(exchange_server ${SOURCES})
+file(GLOB SERVER_SOURCES "src/cpp/main.cpp")
+
+add_executable(exchange_server ${SERVER_SOURCES})
+add_executable(client_server ${CLIENT_SOURCES})
+
 target_link_libraries(exchange_server ${Boost_LIBRARIES})
+target_link_libraries(client_server ${Boost_LIBRARIES})

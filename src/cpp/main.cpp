@@ -50,6 +50,7 @@ inline bool operator> (const Order& lhs, const Order& rhs)
 int main()
 {    
 	std::priority_queue<Order, std::vector<Order>, std::greater<Order> > askbook;
+    std::priority_queue<Order, std::vector<Order>, std::greater<Order> > bidbook;
 
     return 0;
 }
